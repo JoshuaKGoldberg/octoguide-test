@@ -8,19 +8,20 @@ jobs:
 name: OctoGuide
 
 on:
+  discussion:
+    types: [created, edited]
+  discussion_comment:
+    types: [created, deleted, edited]
   issue_comment:
-    types:
-      - created
-      - edited
+    types: [created, deleted, edited]
   issues:
-    types:
-      - edited
-      - opened
+    types: [edited, opened]
   pull_request:
-    types:
-      - edited
-      - opened
+    types: [edited, opened]
+  pull_request_review_comment:
+    types: [created, deleted, edited]
 
 permissions:
+  discussions: write
   issues: write
   pull-requests: write
