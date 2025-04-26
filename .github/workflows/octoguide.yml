@@ -1,0 +1,26 @@
+jobs:
+  octoguide:
+    if: ${{ !endsWith(github.actor, '[bot]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: github/octoguide@fc60e4eaa2c83e8c10dbfd9a4452290c7ed7de21
+
+name: OctoGuide
+
+on:
+  issue_comment:
+    types:
+      - created
+      - edited
+  issues:
+    types:
+      - edited
+      - opened
+  pull_request:
+    types:
+      - edited
+      - opened
+
+permissions:
+  issues: write
+  pull-requests: write
